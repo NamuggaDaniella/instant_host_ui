@@ -9,7 +9,7 @@
 export const BRAND = {
     navy: '#1B2A6B',
     navyDark: '#111A4A',
-    gold: '#F5A623',
+    deepPurple: '#6D28D9',
     goldLight: '#FEF3D9',
     white: '#FFFFFF',
     offWhite: '#F5F7FA',

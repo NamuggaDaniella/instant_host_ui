@@ -11,7 +11,7 @@
   /* Force light-mode only — no dark-mode flicker */
   color-scheme: light;
   color: #1a1a1a;
-  background-color: #f9f5f0; /* warm cream — matches MUI background.default */
+  background-color: #f9f5f0; /* light blue */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,7 +23,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #f9f5f0;
+  background-color: #eeebe7;
 }
 
 /* The React mount point should fill the full height */

@@ -8,9 +8,9 @@ const instantHostTheme = createTheme({
   palette: {
     primary: {
       main: '#1B2A6B',
-      dark: '#111A4A',
+      dark: '#1c5967',
       light: '#2B3E9E',
-      contrastText: '#FFFFFF',
+      contrastText: '#e9eeef',
     },
     secondary: {
       main: '#F5A623',
@@ -19,8 +19,8 @@ const instantHostTheme = createTheme({
       contrastText: '#3D2100',
     },
     background: {
-      default: '#F5F7FA',
-      paper: '#FFFFFF',
+      default: '#e3ecf0',
+      paper: '#e8f2eb',
     },
     error: { main: '#D32F2F' },
     success: { main: '#2E7D32' },
