@@ -19,7 +19,7 @@ const instantHostTheme = createTheme({
       contrastText: '#3D2100',
     },
     background: {
-      default: '#e3ecf0',
+      default: '#4cbcec',
       paper: '#e8f2eb',
     },
     error: { main: '#D32F2F' },
