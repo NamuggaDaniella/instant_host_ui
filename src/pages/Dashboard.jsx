@@ -141,10 +141,16 @@ export default function Dashboard({ token, user }) {
                     </Box>
                     <Stack direction="row" spacing={1.5} flexShrink={0}>
                         {role === 'STUDENT' && (
-                            <Button variant="contained" startIcon={<SearchIcon />} onClick={() => navigate('/hostels')}
-                                sx={{ bgcolor: BRAND.gold, color: '#3D2100', fontWeight: 800, borderRadius: 2.5, px: 2.5, '&:hover': { bgcolor: '#C47D0E' }, boxShadow: '0 4px 14px rgba(245,166,35,0.4)' }}>
-                                Browse Hostels
-                            </Button>
+                            <>
+                                <Button variant="contained" startIcon={<BookOnlineIcon />} onClick={() => navigate('/book-room')}
+                                    sx={{ bgcolor: '#fff', color: BRAND.navy, fontWeight: 800, borderRadius: 2.5, px: 2.5, '&:hover': { bgcolor: '#f5f5f5' }, boxShadow: '0 4px 14px rgba(0,0,0,0.2)' }}>
+                                    Book Now
+                                </Button>
+                                <Button variant="contained" startIcon={<SearchIcon />} onClick={() => navigate('/hostels')}
+                                    sx={{ bgcolor: BRAND.gold, color: '#3D2100', fontWeight: 800, borderRadius: 2.5, px: 2.5, '&:hover': { bgcolor: '#C47D0E' }, boxShadow: '0 4px 14px rgba(245,166,35,0.4)' }}>
+                                    Browse Hostels
+                                </Button>
+                            </>
                         )}
                         {role === 'CUSTODIAN' && (
                             <Button variant="contained" startIcon={<ApartmentIcon />} onClick={() => navigate('/manage-hostels')}
@@ -167,7 +173,7 @@ export default function Dashboard({ token, user }) {
             {!loading && (
                 <Grid container spacing={2.5} mb={3.5}>
                     {statCards.map((card, i) => (
-                        <Grid item xs={12} sm={6} md={3} key={i}>
+                        <Grid xs={12} sm={6} md={3} key={i}>
                             <Card
                                 onClick={() => card.link && navigate(card.link)}
                                 sx={{

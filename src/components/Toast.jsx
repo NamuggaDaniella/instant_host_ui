@@ -45,8 +45,8 @@ const ACCENTS = {
     warning: '#C9A227',   // UCU gold
 };
 
-export default function Toast({ toast, onClose }) {
-    const { open, message, severity = 'success', title } = toast;
+export default function Toast({ toast = {}, onClose }) {
+    const { open = false, message = '', severity = 'success', title = '' } = toast;
 
     return (
         <Snackbar

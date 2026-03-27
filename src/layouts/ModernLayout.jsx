@@ -72,7 +72,6 @@ export default function ModernLayout({ children, user }) {
     const location = useLocation();
     const navigate = useNavigate();
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const displayName = user?.full_name ?? 'User';

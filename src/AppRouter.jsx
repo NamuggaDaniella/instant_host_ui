@@ -16,6 +16,7 @@ import Dashboard from './pages/Dashboard';
 import HostelList from './pages/HostelList';
 import HostelDetail from './pages/HostelDetail';
 import MyBookings from './pages/MyBookings';
+import BookingForm from './pages/BookingForm';
 import ManageHostels from './pages/ManageHostels';
 import BookingRequests from './pages/BookingRequests';
 import Users from './pages/Users';
@@ -58,12 +59,16 @@ function NotFound() {
 
 // ── Decode JWT payload ────────────────────────────────────────────────────────
 function decodeToken(token) {
+    if (!token) return null;
     try {
-        if (!token) return null;
-        const payload = token.split('.')[1];
+        const parts = token.split('.');
+        if (parts.length !== 3) throw new Error('Malformed JWT');
+        const payload = parts[1];
         const json = atob(payload.replaceAll('-', '+').replaceAll('_', '/'));
         return JSON.parse(json);
-    } catch {
+    } catch (err) {
+        console.warn('Invalid JWT token:', err);
+        localStorage.removeItem('token');
         return null;
     }
 }
@@ -128,6 +133,15 @@ export default function AppRouter() {
                 <Route path="/hostels/:id" element={
                     <Page token={token} user={user} handleLogout={handleLogout}>
                         <HostelDetail token={token} user={user} />
+                    </Page>
+                } />
+
+                {/* Book Room Form — STUDENT */}
+                <Route path="/book-room" element={
+                    <Page token={token} user={user} handleLogout={handleLogout}>
+                        <RoleRoute user={user} roles={['STUDENT']}>
+                            <BookingForm token={token} user={user} />
+                        </RoleRoute>
                     </Page>
                 } />
 
